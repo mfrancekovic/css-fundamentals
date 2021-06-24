@@ -17,4 +17,6 @@ export class AppComponent {
   pExample2 = false;
   pExample3 = false;
 
+  assignment = null;
+
 }

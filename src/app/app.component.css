@@ -94,3 +94,97 @@ hr {
   left: calc(50% - 50px);
   top: calc(50% - 50px);
 }
+
+.flex-example-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-example-1 > div {
+  height: 50px;
+  min-width: 50px;
+  background: red;
+}
+
+.assignment-1 {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  background: beige;
+}
+
+.assignment-1 > div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: absolute;
+}
+
+.assignment-1 .first {
+  left: 0;
+  top: 0;
+}
+
+.assignment-1 .second {
+  right: 0;
+  top: 0;
+}
+
+.assignment-1 .third {
+  left: 0;
+  bottom: 0;
+}
+
+.assignment-1 .fourth {
+  right: 0;
+  bottom: 0;
+}
+
+.assignment-2 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.assignment-2 > div {
+  width: 500px;
+  background: mediumpurple;
+}
+
+
+.assignment-3 > div {
+  padding: 24px;
+  background: mediumpurple;
+  margin: 24px;
+}
+
+.assignment-3 > div:nth-child(even) {
+  float: left;
+  margin-left: 0;
+}
+
+.assignment-3 > div:nth-child(odd) {
+  float: right;
+  margin-right: 0;
+}
+
+.assignment-4 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  background: beige;
+}
+
+.assignment-4 > div {
+  position: relative;
+  clear: both;
+  display: inline-block;
+  margin: 0 24px;
+  background: mediumpurple;
+}

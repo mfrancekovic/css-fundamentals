@@ -1,148 +1,262 @@
 <div class="container">
-  <h1>CSS Fundamentals</h1>
-  <h2>position, display, float 🤔</h2>
-  <p>CSS has a lot of stuff that is fun to talk about. For this presentation we will focus on the layout aspects. Or to phrase it differently, we will focus on 'making things go where we want them to go'.</p>
-  <h3>+ one fancy goodie 🎁</h3>
-  <hr>
-  <h1>position</h1>
-  <ul>
-    <li>static</li>
-    <li>fixed</li>
-    <li>sticky</li>
-    <li>relative</li>
-    <li>absolute</li>
-  </ul>
-  <h3>static => 'I do nothing.'</h3>
-  <div class="code-highlight">
+  <ng-container *ngIf="!assignment">
+    <h1>CSS Fundamentals</h1>
+    <h2>position, display, float 🤔</h2>
+    <p>CSS has a lot of stuff that is fun to talk about. For this presentation we will focus on the layout aspects. Or to phrase it differently, we will focus on 'making things go where we want them to go'.</p>
+    <hr>
+    <h1>position</h1>
+    <ul>
+      <li>static</li>
+      <li>fixed</li>
+      <li>sticky</li>
+      <li>relative</li>
+      <li>absolute</li>
+    </ul>
+    <h3>static => 'I do nothing.'</h3>
+    <div class="code-highlight">
     <pre>
       position: static;
       left: 30px; // does nothing
       right: 30px; // does nothing
     </pre>
-  </div>
-  <div class="p-static-e1 example-container">
-    This is a position static element.
-  </div>
-  <p>The only use case where you would want to write position: static; is when you want to override a position value from another selector.</p>
-  <hr>
-  <h3>fixed => 'I don't have a daddy'</h3>
-  <div class="code-highlight">
+    </div>
+    <div class="p-static-e1 example-container">
+      This is a position static element.
+    </div>
+    <p>The only use case where you would want to write position: static; is when you want to override a position value from another selector.</p>
+    <hr>
+    <h3>fixed => 'I don't have a daddy'</h3>
+    <div class="code-highlight">
     <pre>
       position: fixed;
       bottom: 30px;
       right: 30px;
     </pre>
-  </div>
-  <label class="apply-example"><input type="checkbox" [(ngModel)]="pFixed1"> Apply example</label>
-  <div class="example-container" [ngClass]="{'p-fixed-e1' : pFixed1}">
-    This is a position fixed element.
-  </div>
-  <p>You want to use this when you want to display a container by taking it out of the normal flow of the webpage and controling where it will appear depending on the viewport.</p>
-  <hr>
-  <h3>sticky => 'I don't need javascript no mo''</h3>
-  <div class="code-highlight">
+    </div>
+    <label class="apply-example"><input type="checkbox" [(ngModel)]="pFixed1"> Apply example</label>
+    <div class="example-container" [ngClass]="{'p-fixed-e1' : pFixed1}">
+      This is a position fixed element.
+    </div>
+    <p>You want to use this when you want to display a container by taking it out of the normal flow of the webpage and controling where it will appear depending on the viewport.</p>
+    <hr>
+    <h3>sticky => 'I don't need javascript no mo''</h3>
+    <div class="code-highlight">
     <pre>
       position: sticky;
       top: 0;
     </pre>
-  </div>
-  <label class="apply-example"><input type="checkbox" [(ngModel)]="pSticky1"> Apply example</label>
-  <div class="example-container" [ngClass]="{'p-sticky-e1' : pSticky1}">
-    This is a position sticky element.
-  </div>
-  <p>It's useful for navigation bars or table headers - something that you want to stay on the top of the screen when you start scrolling.</p>
-  <hr>
-  <h3>relative => 'I'm my own boss.'</h3>
-  <div class="code-highlight">
+    </div>
+    <label class="apply-example"><input type="checkbox" [(ngModel)]="pSticky1"> Apply example</label>
+    <div class="example-container" [ngClass]="{'p-sticky-e1' : pSticky1}">
+      This is a position sticky element.
+    </div>
+    <p>It's useful for navigation bars or table headers - something that you want to stay on the top of the screen when you start scrolling.</p>
+    <hr>
+    <h3>relative => 'I'm my own boss.'</h3>
+    <div class="code-highlight">
     <pre>
       position: relative;
       left: 30px;
       top: 30px;
     </pre>
-  </div>
-  <label class="apply-example"><input type="checkbox" [(ngModel)]="pRelative1"> Apply example</label>
-  <div class="example-container" [ngClass]="{'p-relative-e1' : pRelative1}">
-    This is a position relative element.
-  </div>
-  <p>It's relative to it's original position.</p>
-  <hr>
-  <h3>relative => 'Where's my daddy?'</h3>
-  <div class="code-highlight">
+    </div>
+    <label class="apply-example"><input type="checkbox" [(ngModel)]="pRelative1"> Apply example</label>
+    <div class="example-container" [ngClass]="{'p-relative-e1' : pRelative1}">
+      This is a position relative element.
+    </div>
+    <p>It's relative to it's original position.</p>
+    <hr>
+    <h3>relative => 'Where's my daddy?'</h3>
+    <div class="code-highlight">
     <pre>
       position: absolute;
       left: 30px;
       top: 30px;
     </pre>
-  </div>
-  <label class="apply-example"><input type="checkbox" [(ngModel)]="pAbsolute1"> Apply example</label>
-  <div class="example-container" [ngClass]="{'p-absolute-e1' : pAbsolute1}">
-    This is a position absolute element.
-  </div>
-  <p>Absolute element is relative to it's closes ancestor that has a position.</p>
-  <hr>
-  <h3>Examples</h3>
-  <label class="apply-example"><input type="checkbox" [(ngModel)]="pExample1"> Example #1</label>
-  <div class="example-p-1" *ngIf="pExample1">
-    <div class="inner"></div>
-  </div>
-  <label class="apply-example"><input type="checkbox" [(ngModel)]="pExample2"> Example #2</label>
-  <div class="example-p-2" *ngIf="pExample2">
-    There's only one thing I hate more than lying: skim milk. Which is water that is lying about being milk.
-    <div class="inner"></div>
-  </div>
-  <label class="apply-example"><input type="checkbox" [(ngModel)]="pExample3"> Example #3</label>
-  <div class="example-p-3" *ngIf="pExample3">
-    Dear frozen yogurt, you are the celery of desserts. Be ice cream or be nothing. Zero stars.
-    <div class="inner"></div>
-  </div>
-  <hr>
-  <h1>display</h1>
-  <p>display property is used to determine the 'box' of the element</p>
-  <p>browser default stylesheet sets the display property for each of the valid html elements</p>
-  <p>There are more possible values, but here we will cover the most useful/used ones: inline, block, inline-block, flex, grid</p>
-  <h2>display: block;</h2>
-  <p>a block element uses up the full width of it's parent, and by default has the height adjusted to fit the content</p>
-  <p>div, p, h1-6 ... are by default block elements</p>
-  <div class="code-highlight">
-    <pre>
-      height: 40px;
-      width: 400px;
-      background: red;
-      padding: 50px;
-    </pre>
-  </div>
-  <div style="background: red;">This is a block element. A div.</div>
-  <p>One can apply width and height to a block element.</p>
-  <div style="height: 100px; width: 100px; background: red;"></div>
-  <div>
-    <div style="height: 100px; width: 100px; background: red;"></div>
-    <div>Ron is a born leader. this div goes to a new line because it's a block element, even though the div above has width constrained to 100px</div>
-    <img src="assets/ron.jpg">
-  </div>
-  <div style="padding: 30px; margin: 30px; background: yellow;">you can apply padding and margin to a block element, and it will </div>
-  <p>display: inline; is useful for formatting certain parts of the text, nothing else.</p>
-  <hr>
-  <h2>display: inline;</h2>
-  <div class="code-highlight">
-    <pre>
-      height: 40px;
-      width: 400px;
-      background: red;
-      padding: 50px;
+    </div>
+    <label class="apply-example"><input type="checkbox" [(ngModel)]="pAbsolute1"> Apply example</label>
+    <div class="example-container" [ngClass]="{'p-absolute-e1' : pAbsolute1}">
+      This is a position absolute element.
+    </div>
+    <p>Absolute element is relative to it's closes ancestor that has a position.</p>
+    <hr>
+    <h3>Examples</h3>
+    <label class="apply-example"><input type="checkbox" [(ngModel)]="pExample1"> Example #1</label>
+    <div class="example-p-1" *ngIf="pExample1">
+      <div class="inner"></div>
+    </div>
+    <label class="apply-example"><input type="checkbox" [(ngModel)]="pExample2"> Example #2</label>
+    <div class="example-p-2" *ngIf="pExample2">
+      There's only one thing I hate more than lying: skim milk. Which is water that is lying about being milk.
+      <div class="inner"></div>
+    </div>
+    <label class="apply-example"><input type="checkbox" [(ngModel)]="pExample3"> Example #3</label>
+    <div class="example-p-3" *ngIf="pExample3">
+      Dear frozen yogurt, you are the celery of desserts. Be ice cream or be nothing. Zero stars.
+      <div class="inner"></div>
+    </div>
+    <hr>
+    <h1>display</h1>
+    <p>display property is used to determine the 'box' of the element</p>
+    <p>browser default stylesheet sets the display property for each of the valid html elements</p>
+    <p>There are more possible values, but here we will cover the most useful/used ones: inline, block, inline-block, flex, grid</p>
+    <h2>display: block;</h2>
+    <p>a block element uses up the full width of it's parent, and by default has the height adjusted to fit the content</p>
+    <p>div, p, h1-6 ... are by default block elements</p>
 
+    <div style="background: red;">This is a block element. A div.</div>
+    <p>One can apply width and height to a block element.</p>
+    <div class="code-highlight">
+    <pre>
+      height: 100px;
+      width: 100px;
+      background: red;
     </pre>
-  </div>
-  <span style="height: 40px; width: 400px; background: red;">This is a span element.</span>
-  <p>inline element ignores width, height, and margins work only on the x-axis</p>
+    </div>
+    <div style="height: 100px; width: 100px; background: red;"></div>
+    <div>
+      <p>This is a paragraph, it goes to new line.</p>
+      <div style="height: 100px; width: 100px; background: red;"></div>
+      <div>Ron is a born leader. this div goes to a new line because it's a block element, even though the div above has width constrained to 100px</div>
+      <img src="assets/ron.jpg">
+    </div>
+    <div style="padding: 30px; margin: 30px; background: yellow;">you can apply padding and margin to a block element, and it will 'expand' and move the content around it to accommodate to the new dimensions</div>
+    <p>display: inline; is useful for formatting certain parts of the text, nothing else.</p>
+    <hr>
+    <h2>display: inline;</h2>
+    <div class="code-highlight">
+    <pre>
+      height: 40px;
+      width: 400px;
+      background: red;
+      padding: 50px;
+    </pre>
+    </div>
+    <span style="height: 40px; width: 400px; background: red;">This is a span element.</span>
+    <p>inline element ignores width, height, and margins work only on the x-axis</p>
+    <div>
+      <span style="margin: 50px; padding: 30px; background: yellow;">Some span</span>
+      <span>Another span</span>
+    </div>
+    <div>
+      <img src="assets/ron.jpg">
+      This is Ron. img element is also inline by default.
+    </div>
+    <p>display: inline; is useful for formatting certain parts of the text, nothing else.</p>
+    <hr>
+    <h2>display: inline-block;</h2>
+    <p>Similar example as with the inline, but here notice that the elements are redefining the rendering box of the parent properly, like
+      the block element would + they are in the same line (like the inline element works).</p>
+    <div>
+      <span style="margin: 50px; padding: 30px; background: yellow; display: inline-block;">Some span</span>
+      <span style="display: inline-block;">Another span</span>
+    </div>
+    <p>display: inline-block; is useful for creating navbars, or whenever you have a simple horizontal layout, and you want to stack blocks in a row</p>
+    <hr>
+    <h2>display: flex;</h2>
+    <p>flex element works as a block element, but it determines how the immediate children will be distributed</p>
+    <div class="flex-example-1">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <p>currently flex doesn't support gutters, one needs to write the logic for the gutters</p>
+    <hr>
+    <h1>float</h1>
+    <p>once upon a time there was only float</p>
+    <p>when float is applied to an element, it is taken out of the normal 'flow' of the page</p>
+    <p>That means that the dimensions of the element will not influence the parent dimensions.</p>
+    <div>
+      <div>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        <div style="float: right; width: 100px; height: 100px; background: red;"></div>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
+
+    </div>
+    <h3>Example</h3>
+    <div>
+      <div style="float: left; height: 40px; background: red;">This is a float left element.</div>
+      <div style="width: 800px;">This is a normal block element.</div>
+      <div style="float: left; height: 50px; background: beige">This is another float left element.</div>
+      <div style="clear: both;">A clearfix</div>
+      <div style="float: right; height: 50px; background: blue">This is a float right element.</div>
+    </div>
+    <p>today, with flex and grid one can achieve layouts that were a distant dream with float only.</p>
+    <p>float still has a strong use case when you have a piece of content text + image (or video, or any other type of box inside the text.)</p>
+  </ng-container>
+
   <div>
-    <span style="margin: 50px; padding: 30px; background: yellow;">Some span</span>
-    <span>Another span</span>
+    <h1 (click)="assignment = null">Assignments</h1>
+    <select [(ngModel)]="assignment">
+      <option value="1">Assignment 1</option>
+      <option value="2">Assignment 2</option>
+      <option value="3">Assignment 3</option>
+      <option value="4">Assignment 4</option>
+    </select>
   </div>
-  <div>
-    <img src="assets/ron.jpg">
-    This is Ron. img element is also inline by default.
-  </div>
-  <p>display: inline; is useful for formatting certain parts of the text, nothing else.</p>
-  <hr>
+
+  <ng-container *ngIf="assignment === '1'">
+    <p>Create an element 600x600px, that has 4 boxes of 100x100px each in one corner.</p>
+    <div class="assignment-1" >
+      <div class="first"></div>
+      <div class="second"></div>
+      <div class="third"></div>
+      <div class="fourth"></div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="assignment === '2'">
+    <p>Create an element in the middle of the viewport, 500px width, and with dynamic content - it should be centered on both x and y axis.</p>
+    <p>Filler content 👇</p>
+
+    <div>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</div>
+    <div>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</div>
+    <div>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</div>
+    <div>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</div>
+    <div>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</div>
+    <div>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</div>
+    <div class="assignment-2">
+        <div>Ron wrote a book about Pawnee rangers. It has one sentence. "Be a man."</div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="assignment === '3'">
+    <p>Create an element of text where you have 2 highlight boxes with quotes and text is wrapping them. Each highlight box should have a spacing between the text and it's border.</p>
+    <div class="assignment-3" >
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae <div>Ron likes to eat stake.</div>vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium <div>Ron doesn't like the government.</div>doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="assignment === '4'">
+    <p>I want to have 3 items that go in one row, with fixed spacing between them. Each item should have width match the content width.
+      I have used the following css. Find redundancies. (ignore the background colors, they are for visual clarity)</p>
+    <div class="code-highlight">
+      <pre>
+        .assignment-4 &#123;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          position: relative;
+          background: beige;
+        &#125;
+
+        .assignment-4 > div &#123;
+          position: relative;
+          clear: both;
+          display: inline-block;
+          margin: 0 24px;
+          background: mediumpurple;
+        &#125;
+      </pre>
+    </div>
+    <div class="assignment-4" >
+      <div>First item</div>
+      <div>Second item</div>
+      <div>Third item</div>
+    </div>
+  </ng-container>
 
 </div>
