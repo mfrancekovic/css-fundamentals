@@ -1,0 +1,96 @@
+hr {
+  margin: 64px 0;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 24px auto;
+}
+
+.code-highlight {
+  background: #f6f8fa;
+  border-radius: 4px;
+}
+
+.code-highlight pre {
+  padding: 16px;
+  margin: 0;
+}
+
+.example-container {
+  background: bisque;
+}
+
+.p-static-e1 {
+  margin: 24px 0;
+  left: 30px;
+  right: 30px;
+  position: static;
+}
+
+.p-fixed-e1 {
+  bottom: 30px;
+  right: 30px;
+  position: fixed;
+}
+
+.apply-example {
+  margin: 24px 0;
+  display: block;
+}
+
+.p-sticky-e1 {
+  top: 0;
+  position: sticky;
+}
+
+.p-relative-e1 {
+  position: relative;
+  left: 30px;
+  top: 30px;
+}
+
+.p-absolute-e1 {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+
+.example-p-1 {
+  position: relative;
+  height: 200px;
+  background: bisque;
+}
+
+.example-p-1 .inner {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  background: aquamarine;
+}
+
+.example-p-2 {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100px;
+  background: bisque;
+}
+
+.example-p-2 .inner {
+  position: absolute;
+  background: aquamarine;
+  width: 50px;
+  height: 50px;
+  right: 0;
+}
+
+.example-p-3 {
+  position: fixed;
+  background: mediumvioletred;
+  width: 100px;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+}
